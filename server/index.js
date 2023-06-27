@@ -9,7 +9,7 @@ import morgan from "morgan"
 import path from "path"
 import { fileURLToPath } from "url"
 import { register } from "./controllers/auth.js";
-
+import authRoutes from "./routes/auth.js"
 // Configs
 
 dotenv.config()
@@ -46,7 +46,6 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
-
 
 
 // MONGOOSE SETUP 
